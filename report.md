@@ -91,11 +91,11 @@ Overall, the BERT fine tuned models were vastly superior to the other models. Da
 
 ### Team Contributions
 
-Andy (60%) - BERT models, Embeddings, Data Augmentation, Graphics, Report
+Andy (50%) - BERT models, Embeddings, Data Augmentation, Graphics, Report
 
-Eric (30%) - LSTM models
+Eric (35%) - LSTM models
 
-Fenglu (10%) - attempted RNN
+Fenglu (15%) - attempted RNN
 
 ### References
 
