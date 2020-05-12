@@ -77,7 +77,7 @@ The baseline outperformed 5/7 perturbation models. Interestingly, all five of th
 We tested five of our models against the 4 released challenge datasets and the fine tuned BERT model with word deletion perturbations did the best. 
 
 <p align="center">
-  <img height="139" width="193" src="TrainingLoss.png">
+  <img height="208" width="290" src="TrainingLoss.png">
 </p>
 <p align="center">Figure 8: Final Model (BERT Delete Word) Training Loss</p>
 
