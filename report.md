@@ -24,7 +24,7 @@ We explored several of those models and found that BERT was by far the best mode
 ### Approach
 
 <p align="center">
-  <img src="LogReg.png">
+  <img height="116" width="496" src="LogReg.png">
 </p>
 <p align="center">Figure 1: Bag of Words Logistic Regression Model</p>
 
@@ -33,12 +33,12 @@ For all of the models, we used only the Yelp dataset for training and validation
 We experimented with LSTMs and Bidirectional LSTMs using both bag of words and GloVe embeddings. We also considered training an RNN but encountered issues in training and decided not to pursue it given that LSTMs are generally considered to be more effective.
 
 <p align="center">
-  <img src="BERTPreProcessing.png">
+  <img height="157" width="603" src="BERTPreProcessing.png">
 </p>
 <p align="center">Figure 2: BERT Preprocessing</p>
 
 <p align="center">
-  <img src="BERT.png">
+  <img height="351" width="410" src="BERT.png">
 </p>
 <p align="center">Figure 3: Fine-Tuned BERT Sequence Classification Model</p>
 
@@ -47,24 +47,23 @@ The final model we trained was a fine-tuned BERT classifier. We started with the
 |Perturbation|Text|
 |:-:|:-:|
 |Original| I really enjoyed my dinner tonight |
-|Keyboard Distance| I really enjoyed my djnner tonight |
-|Character Insertion| I rea_lly enjoyed my dinner tonight |
-|Character Swap| I really enjoyed my dniner tonight |
-|Character Deletion| I reall enjoyed my dinner tonight |
-|Misspelling| O really enjoyed my dinner tonight |
-|Word Swap| Really I enjoyed my dinner tonight |
+|Keyboard Distance| I really enjoyed my dinnfr tonight |
+|Character Insertion| I really enjoyed my dinner to_nLight |
+|Character Swap| I relaly enjoyed my dinner tonight |
+|Character Deletion| I really enjoyed my dinner tniht |
+|Misspelling| I really enjoyed mit dinner tonight |
+|Word Swap| I really enjoyed dinner my tonight |
 |Word Deletion| Really enjoyed my dinner tonight |
-|Word Splitting| I really enjoyed my di nner tonight |
-<p align="center">Figure 4: Data Augmentation Perturbations</p>
+|Word Splitting| I rea lly enjoyed my dinner tonight |
+<p align="left">Figure 4: Data Augmentation Perturbations</p>
 
 ### Results
 
 We used only the Yelp dataset for training our models. For model comparison and hyperparameter tuning, we used 45,000 reviews for training, 5,000 reviews for validation, and 5,000 reviews for testing. We then took the best performing models according to test accuracy and test MAE (mean absolute error), trained them on the full 533,581 review Yelp dataset and tested them using the four release challenge datasets to see how well our models generalized to perturbed reviews (again using test accuracy and MAE to evaluate model success).
 
 <p align="center">
-  <img src="BERTPreProcessing.png">
+  <img height="149" width="345" src="ModelComparison.png">
 </p>
-![Figure 5](ModelComparison.png)
 <p align="center">Figure 5: Model Comparison (45,000 training + 5,000 test)</p>
 
 BERT comfortably outperformed the LSTM-based and logistic regression-based models. Interestingly, logistic regression was surprisingly accurate (even beating out one of the LSTMs), although its absolute error was relatively high. This arises because our logistic regression model tended to over-predict 5 stars, which is by far the most frequently occurring class, allowing it to be frequently correct at the cost of being much more overly optimistic when predicting the wrong class (hence the high MAE).
@@ -72,21 +71,21 @@ BERT comfortably outperformed the LSTM-based and logistic regression-based model
 As expected, the models using GloVe embeddings did better than the models using bags of words. More surprisingly, the bidirectional LSTMs weren’t really an improvement over the LSTMs, although this likely arose from a combination of random chance and insufficient hyperparameter tuning.
 
 <p align="center">
-  <img src="PerturbationComparison.png">
+  <img height="211" width="367" src="PerturbationComparison.png">
 </p>
 <p align="center">Figure 6: Perturbation Comparison on BERT (45,000 training + 5,000 test)</p>
 
 The baseline outperformed 5/7 perturbation models. Interestingly, all five of those models involved turning well-formed words into malformed words. This makes sense because it appears that BERT simply wasn’t able to embed those malformed words, given how infrequently each of those misspellings appear. The combined perturbation model, which either swapped or deleted words, wasn’t able to clearly beat the baseline. One possible reason is that the alternating swaps and deletions could be more difficult for BERT to learn and that one epoch of 45,000 training samples wasn’t enough. Additionally, the baseline model had a slight advantage in that the validation sets were not perturbed, meaning the baseline had the most similar training and test sets.
 
 <p align="center">
-  <img src="TestResults.png">
+  <img height="128" width="964" src="TestResults.png">
 </p>
 <p align="center">Figure 7: Test Results (533,581 training + 500 test per set)</p>
 
 We tested five of our models against the 4 released challenge datasets and the fine tuned BERT model with word deletion perturbations did the best. 
 
 <p align="center">
-  <img src="TrainingLoss.png">
+  <img height="139" width="193" src="TrainingLoss.png">
 </p>
 <p align="center">Figure 8: Final Model (BERT Delete Word) Training Loss</p>
 
