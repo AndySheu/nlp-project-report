@@ -96,3 +96,21 @@ Andy (60%) - BERT models, Embeddings, Data Augmentation, Graphics, Report
 Eric (30%) - LSTM models
 
 Fenglu (10%) - attempted RNN
+
+### References
+
+- https://arxiv.org/pdf/1605.05362.pdf
+- https://arxiv.org/pdf/1401.0864.pdf
+- https://cseweb.ucsd.edu/classes/wi15/cse255-a/reports/fa15/017.pdf
+- https://pdfs.semanticscholar.org/95a5/52190552602cd751b0a0b3cd4c9e27ac6eda.pdf
+- https://www.aclweb.org/anthology/D15-1167.pdf
+- https://pdfs.semanticscholar.org/4946/89f4522619b887e515aea2b205490b0eb5cd.pdf
+- https://link.springer.com/chapter/10.1007/978-3-030-32381-3_16
+- https://mccormickml.com/2019/07/22/BERT-fine-tuning/
+- https://towardsdatascience.com/multiclass-text-classification-using-lstm-in-pytorch-eac56baed8df
+- https://towardsdatascience.com/data-augmentation-in-nlp-2801a34dfc28
+- https://towardsdatascience.com/these-are-the-easiest-data-augmentation-techniques-in-natural-language-processing-you-can-think-of-88e393fd610
+- https://github.com/makcedward/nlpaug
+- https://github.com/huggingface/transformers
+- https://www.footankleinstitute.com/images/dynamic/yelp_5_star_review%20%281%29.gif
+- http://www.mccormickml.com/assets/BERT/padding_and_mask.png
