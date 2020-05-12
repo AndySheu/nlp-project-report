@@ -44,18 +44,10 @@ We experimented with LSTMs and Bidirectional LSTMs using both bag of words and G
 
 The final model we trained was a fine-tuned BERT classifier. We started with the Bert Sequence Classification transformer and tuned max sentence length and batch size (learning rate had a much smaller effect). Afterwards, we trained the model on a variety of data perturbations and a subset of the successful ones (word deletion on its own ended up being the most effective).
 
-|Perturbation|Text|
-|:-:|:-:|
-|Original| I really enjoyed my dinner tonight |
-|Keyboard Distance| I really enjoyed my dinnfr tonight |
-|Character Insertion| I really enjoyed my dinner to_nLight |
-|Character Swap| I relaly enjoyed my dinner tonight |
-|Character Deletion| I really enjoyed my dinner tniht |
-|Misspelling| I really enjoyed mit dinner tonight |
-|Word Swap| I really enjoyed dinner my tonight |
-|Word Deletion| Really enjoyed my dinner tonight |
-|Word Splitting| I rea lly enjoyed my dinner tonight |
-<p align="left">Figure 4: Data Augmentation Perturbations</p>
+<p align="center">
+  <img height="214" width="455" src="PerturbationExamples.png">
+</p>
+<p align="center">Figure 4: Data Augmentation Perturbations</p>
 
 ### Results
 
