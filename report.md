@@ -11,7 +11,7 @@
 
 One of the biggest challenges of modern natural language processing lies in sentiment analysis. In particular, sentiment analysis is of particular interest to company marketing departments trying to collect customer feedback on their products in order to more accurately understand customer expectations and experiences, in addition to making more informed decisions.
 
-One method is to simply provide heavily structured forms, where you categorically answer predefined questions by rating certain parts of your experience using 1 to 5 stars or by stating whether or not you agree with certain statements. The problem with this, of course, is that it severely limits the feedback given, and also doesn’t standardize scoring between different customers.
+One method is to simply provide heavily structured forms where you categorically answer predefined questions by rating certain parts of your experience using 1 to 5 stars or by stating whether or not you agree with certain statements. The problem with this, of course, is that it severely limits the feedback given, and also doesn’t standardize scoring between different customers.
 
 The other primary method to solicit customer feedback is to simply ask them about their experience in the form of text. Unfortunately, massive amounts of text isn’t numerical and thus needs to be processed in order to be used in aggregation, something which simply isn’t feasible for humans to do manually. As a result, companies care about sentiment analysis (and more specifically review to rating models) as a way to automate the feedback pipeline in order to speed up the feedback loop, eliminate bias between reviews (different labelers may interpret reviews differently), and hopefully reduce error. 
 
