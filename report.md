@@ -13,7 +13,7 @@ One of the biggest challenges of modern natural language processing lies in sent
 
 One method is to simply provide heavily structured forms where you categorically answer predefined questions by rating certain parts of your experience using 1 to 5 stars or by stating whether or not you agree with certain statements. The problem with this, of course, is that it severely limits the feedback given and also doesn’t standardize scoring between different customers.
 
-The other primary method to solicit customer feedback is to simply ask them about their experience in the form of text. Unfortunately, massive amounts of text isn’t numerical and thus needs to be processed in order to be used in aggregation, something which simply isn’t feasible for humans to do manually. As a result, companies care about sentiment analysis (and more specifically review to rating models) as a way to automate the feedback pipeline in order to speed up the feedback loop, eliminate biases in interpretation between reviews (different labelers may interpret reviews differently), and hopefully reduce error. 
+The other primary method to solicit customer feedback is to simply ask them about their experience in the form of text. Unfortunately, massive amounts of text isn’t numerical and thus needs to be processed in order to be used in aggregation, something which simply isn’t feasible for humans to do manually. As a result, companies care about sentiment analysis (and more specifically review to rating models) as a way to automate the feedback pipeline in order to speed up the feedback loop, eliminate biases in interpretation between reviews (different labelers may interpret reviews differently), and hopefully reduce error.
 
 We are trying to do just that: predict a user’s rating of a restaurant on a 1-to-5 star scale (no half stars) given a text description of their experience. Our training data comes from a publically released Yelp dataset of 533,581 reviews (containing the text of their review and the rating they gave out of 5 stars). We will measure our model’s success by looking at its performance on unseen data in two metrics: predicting the exact rating and minimizing the mean absolute difference between the predicted and actual rating.
 
@@ -70,11 +70,11 @@ As expected, the models using GloVe embeddings did better than the models using 
 The baseline outperformed 5/7 perturbation models. Interestingly, all five of those models involved turning well-formed words into malformed words. This makes sense because it appears that BERT simply wasn’t able to embed those malformed words, given how infrequently each of those misspellings appear. The combined perturbation model, which either swapped or deleted words, wasn’t able to clearly beat the baseline. One possible reason is that the alternating swaps and deletions could be more difficult for BERT to learn and that one epoch of 45,000 training samples wasn’t enough. Additionally, the baseline model had a slight advantage in that the validation sets were not perturbed, meaning the baseline had the most similar training and test sets.
 
 <p align="center">
-  <img height="128" width="964" src="TestResults.png">
+  <img height="64" width="482" src="TestResults.png">
 </p>
 <p align="center">Figure 7: Test Results (533,581 training + 500 test per set)</p>
 
-We tested five of our models against the 4 released challenge datasets and the fine tuned BERT model with word deletion perturbations did the best. 
+We tested five of our models against the 4 released challenge datasets and the fine tuned BERT model with word deletion perturbations did the best.
 
 <p align="center">
   <img height="208" width="290" src="TrainingLoss.png">
@@ -91,11 +91,9 @@ Overall, the BERT fine tuned models were vastly superior to the other models. Da
 
 ### Team Contributions
 
-Andy (50%) - BERT models, Embeddings, Data Augmentation, Graphics, Report
-
-Eric (35%) - LSTM models
-
-Fenglu (15%) - attempted RNN
+- Andy (50%) - BERT models, Embeddings, Data Augmentation, Graphics, Report
+- Eric (35%) - LSTM models
+- Fenglu (15%) - attempted RNN
 
 ### References
 
