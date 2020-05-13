@@ -58,7 +58,7 @@ We used only the Yelp dataset for training our models. For model comparison and 
 </p>
 <p align="center">Figure 5: Model Comparison (45,000 training + 5,000 test)</p>
 
-BERT comfortably outperformed the LSTM-based and logistic regression-based models. Interestingly, logistic regression was surprisingly accurate (even beating out one of the LSTMs), although its absolute error was relatively high. This arises because our logistic regression model tended to over-predict 5 stars, which is by far the most frequently occurring class, allowing it to be frequently correct at the cost of being much more overly optimistic when predicting the wrong class (hence the high MAE).
+BERT comfortably outperformed the LSTM-based and logistic regression-based models. Interestingly, logistic regression was surprisingly accurate (even beating out one of the LSTMs), although its absolute error was relatively high. This arose because our logistic regression model tended to over-predict 5 stars, which is by far the most frequently occurring class, allowing it to be frequently correct at the cost of being overly optimistic when predicting the wrong class (hence the high MAE).
 
 As expected, the models using GloVe embeddings did better than the models using bags of words. More surprisingly, the bidirectional LSTMs weren’t really an improvement over the LSTMs, although this likely arose from a combination of random chance and insufficient hyperparameter tuning.
 
